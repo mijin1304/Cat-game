@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>고양이 게임</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <h1>🐱 고양이 게임</h1>
+
+    <div class="scoreboard">
+      <div>점수: <span id="score">0</span></div>
+      <div>레벨: <span id="level">1</span></div>
+      <div>최고 점수: <span id="best">0</span></div>
+    </div>
+
+    <div class="controls">
+      <label>난이도
+        <select id="difficulty">
+          <option value="330">쉬움 (330ms)</option>
+          <option value="250" selected>보통 (250ms)</option>
+          <option value="170">어려움 (170ms)</option>
+          <option value="80">매우 어려움 (80ms)</option>
+        </select>
+      </label>
+      <button id="soundBtn" type="button">🔊 소리 켜짐</button>
+      <button id="pauseBtn" type="button" disabled>일시정지</button>
+    </div>
+
+    <div class="board">
+      <canvas id="canvas" width="400" height="400"></canvas>
+
+      <div id="startScreen" class="overlay">
+        <p>방향키로 고양이를 움직여<br>물고기를 먹어보세요!</p>
+        <button id="startBtn" type="button">게임 시작</button>
+      </div>
+
+      <div id="gameOverScreen" class="overlay hidden">
+        <h2>게임 오버</h2>
+        <p>점수: <span id="finalScore">0</span></p>
+        <button id="restartBtn" type="button">다시 시작</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
